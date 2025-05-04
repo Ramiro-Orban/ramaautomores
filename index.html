@@ -2,78 +2,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramaautomotores</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>Ramaautomotores</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Ramaautomotores</h1>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#autos">Autos en venta</a>
-            <a href="#nosotros">Sobre nosotros</a>
-            <a href="#simulador">Simulador de financiación</a>
-            <a href="#cotizacion">Cotizá tu vehículo</a>
-        </nav>
-    </header>
+  <h1>Ramaautomotores</h1>
 
-    <section id="inicio">
-        <h2>Bienvenido a Ramaautomotores</h2>
-        <p>Tu lugar de confianza para encontrar el auto ideal. Calidad, financiación y atención personalizada.</p>
-    </section>
+  <section>
+    <h2>Simulador de financiación</h2>
+    <label>Monto a financiar: <input type="number" id="monto" /></label><br />
+    <label>Cuotas:
+      <select id="cuotas">
+        <option value="18">18 cuotas (80% anual)</option>
+        <option value="36">36 cuotas (75% anual)</option>
+        <option value="48">48 cuotas (72.5% anual)</option>
+      </select>
+    </label><br />
+    <button onclick="calcularCuota()">Calcular</button>
+    <p id="resultado"></p>
+  </section>
 
-    <section id="autos">
-        <h2>Autos en venta</h2>
-        <div class="auto">
-            <img src="auto1.jpg" alt="Auto 1" width="300">
-            <h3>Ford Fiesta 2018</h3>
-            <p>Precio: $5.200.000</p>
-        </div>
-        <div class="auto">
-            <img src="auto2.jpg" alt="Auto 2" width="300">
-            <h3>Chevrolet Onix 2020</h3>
-            <p>Precio: $6.800.000</p>
-        </div>
-    </section>
+  <section>
+    <h2>Cotización de tu vehículo</h2>
+    <label>Marca: <input type="text" id="marca" /></label><br />
+    <label>Modelo: <input type="text" id="modelo" /></label><br />
+    <label>Año: <input type="number" id="anio" /></label><br />
+    <label>Kilómetros: <input type="number" id="km" /></label><br />
+    <label>Estado general:
+      <select id="estado">
+        <option value="excelente">Excelente</option>
+        <option value="bueno">Bueno</option>
+        <option value="regular">Regular</option>
+      </select>
+    </label><br />
+    <button onclick="cotizarVehiculo()">Cotizar</button>
+    <p id="cotizacion"></p>
+  </section>
 
-    <section id="nosotros">
-        <h2>Sobre nosotros</h2>
-        <p>En Ramaautomotores ofrecemos vehículos seleccionados y un asesoramiento completo para ayudarte a tomar la mejor decisión. Estamos ubicados en Resistencia, Chaco.</p>
-    </section>
-
-    <section id="simulador">
-        <h2>Simulador de financiación</h2>
-        <label for="monto">Monto a financiar ($):</label>
-        <input type="number" id="monto"><br>
-        <label for="cuotas">Cantidad de cuotas:</label>
-        <select id="cuotas">
-            <option value="18">18 cuotas - 80% anual</option>
-            <option value="36">36 cuotas - 75% anual</option>
-            <option value="48">48 cuotas - 72.5% anual</option>
-        </select><br>
-        <button onclick="simularFinanciacion()">Calcular</button>
-        <p id="resultado"></p>
-    </section>
-
-    <section id="cotizacion">
-        <h2>Cotizá tu vehículo</h2>
-        <form enctype="multipart/form-data">
-            <label for="marca">Marca:</label>
-            <input type="text" id="marca"><br>
-            <label for="modelo">Modelo:</label>
-            <input type="text" id="modelo"><br>
-            <label for="año">Año:</label>
-            <input type="number" id="año"><br>
-            <label for="estado">Estado general:</label>
-            <input type="text" id="estado"><br>
-            <label for="archivo">Subí un archivo con los detalles del vehículo:</label>
-            <input type="file" id="archivo"><br>
-            <button type="submit">Enviar cotización</button>
-        </form>
-    </section>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
